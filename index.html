@@ -7,6 +7,12 @@
 
 <body>
 	<h2>Marty Whelan Embedded SWF</h2>
+	<h3>Blog Post 2</h3>
+	<p>With this update I managed to figure out the Enter Frame events to get the character to move instantly without any delay from key polling. Some issues I ran into was with reaching the edge bounding box/deadzone, if you move again the animation would bug out. This was fixed when setting up new deadzone parameters. By setting the deadzone to actual values it fixed the issue with the animation buggin out. E.G setting the character position to 768 when he reached it, or 256 for the other side.
+I also managed to optimize the code and FLA a little bit,thought there is still an issue with the three wooden boxes causing frame drops. Which may require one or more to be removed.
+The two collisions have been coded, but there is no animation on the character yet, collision 1 is set to go with only the character and rocket animation missing. Collision 2 is currently coded out as it requires animation to actually work, so i will be working on the animation in the following week. The platform and turn cycle will also be worked on in this time, as most of it is animation not coding.
+For the platform it shouldn't be too hard, I just have to have it so that when the bottom of the bounding box for the character collides with the platforms top part, the characters Y position is set to the top of the platform, when this then is false, the character begins to fall off the platform to the ground, so, there needs to be if statements checking each time to see if the collision is true.
+	</p>
     <object width="1000" height="1000" data="InteractiveWalk_v02.swf"></object>
 </body>
 </html>
