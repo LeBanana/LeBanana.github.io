@@ -8,11 +8,18 @@
 <body>
 	<h2>Marty Whelan Embedded SWF</h2>
 	<h3>Blog Post 2</h3>
-	<p>With this update I managed to figure out the Enter Frame events to get the character to move instantly without any delay from key polling. Some issues I ran into was with reaching the edge bounding box/deadzone, if you move again the animation would bug out. This was fixed when setting up new deadzone parameters. By setting the deadzone to actual values it fixed the issue with the animation buggin out. E.G setting the character position to 768 when he reached it, or 256 for the other side.
-I also managed to optimize the code and FLA a little bit,thought there is still an issue with the three wooden boxes causing frame drops. Which may require one or more to be removed.
-The two collisions have been coded, but there is no animation on the character yet, collision 1 is set to go with only the character and rocket animation missing. Collision 2 is currently coded out as it requires animation to actually work, so i will be working on the animation in the following week. The platform and turn cycle will also be worked on in this time, as most of it is animation not coding.
-For the platform it shouldn't be too hard, I just have to have it so that when the bottom of the bounding box for the character collides with the platforms top part, the characters Y position is set to the top of the platform, when this then is false, the character begins to fall off the platform to the ground, so, there needs to be if statements checking each time to see if the collision is true.
-	</p>
+	<pre>
+	In this post I have managed to sort out the ENTER_FRAME commands to move the character wiht no delay, 
+	and also fixed some bugs with the animations. The deadzone has been implemented as well as the collisions. 
+	Each collision has a one time activation as having multiple wouldnt make sense, as both are bombs explode.
+	The first collision had some bugs, such as when the character reached it the animation would bug out, and not play correctly.
+	I added some booleans to fix this, which would also disable all the movement commands so you cant move until the collision event is done.
+	I did this with both events as it was needed so the animations could play uninterrupted.
+	There is still a bug with the second collisions animation resetting, will have to look into it further.
+	The last things to do would be to implement a stage zone(where you can walk, so you stop before walking off into nothing).
+	Then see if I can do a infinite scrolling background.Then to work on the jump code and animation, and finally do the turn animation.
+	I will need to run a clean up to see which code I can remove, or is not doing anything, as to clean it up.
+	</pre>
     <object width="1000" height="1000" data="InteractiveWalk_v01_t03.swf"></object>
 </body>
 </html>
